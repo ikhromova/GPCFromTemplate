@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Docker pull
+        run: docker pull jetbrains/qodana-configuration-uploader:latest
+
       - name: Run Qodana Configuration Uploader
         env:
           QODANA_CONFIGURATIONS_TOKEN: ${{ secrets.QODANA_CONFIGURATIONS_TOKEN }}
